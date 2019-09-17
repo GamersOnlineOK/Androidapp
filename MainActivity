@@ -1,0 +1,56 @@
+package com.example.c1
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity() {
+
+    lateinit var et_adicion1:EditText
+    lateinit var et_adicion2:EditText
+    lateinit var btnsumar:Button
+    lateinit var tv_resultado:TextView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        escuchar()
+        sumar()
+
+
+    }
+    private fun escuchar(){
+        et_adicion1=findViewById(R.id.et_adicion1)
+        et_adicion2=findViewById(R.id.et_adicion2)
+        btnsumar=findViewById(R.id.btnsumar)
+        tv_resultado=findViewById(R.id.tv_resultado)
+
+    }
+    private fun sumar(){
+        btnsumar.setOnClickListener(){
+            val num1=atexto(et_adicion1)
+            val num2=atexto(et_adicion2)
+            if (validar(num1,num2)){
+                Toast.makeText(this,"Ingrese ambos valores",Toast.LENGTH_LONG).show()
+
+            }else{
+                val Res=num1.toInt()+num2.toInt()
+                tv_resultado.text="Resultado $Res"
+
+            }
+
+        }
+
+    }
+    private fun validar(num1:String,num2:String):Boolean{
+        return num1.isEmpty()||num2.isEmpty()
+    }
+    private fun atexto(editText: EditText):String{
+        return editText.text.toString()
+    }
+}
