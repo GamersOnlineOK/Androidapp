@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    tools:context=".MainActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gastos"
+        android:textSize="30dp"
+        android:textColor="@android:color/white"
+        android:background="@color/RojoDanger"
+        android:gravity="center"
+        android:layout_below="@+id/btn_ingresos"
+        android:textStyle="bold"
+        android:id="@+id/btn_gastos"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:textColor="@android:color/black"
+        android:layout_height="wrap_content"
+        android:background="@color/verderOk"
+        android:text="Ingresos"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:id="@+id/btn_ingresos"
+        />
+
+
+
+</RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
